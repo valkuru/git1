@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suresh Reddy — Job Search Dashboard</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#111827;--muted:#667085;--line:#e5e7eb;--accent:#4f46e5;--good:#067647;--warn:#b54708;--shadow:0 8px 30px rgba(16,24,40,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit} .wrap{max-width:1200px;margin:auto;padding:24px}
+header{background:#111827;color:white;border-radius:22px;padding:34px;margin-bottom:22px;box-shadow:var(--shadow)}
+header h1{font-size:34px;margin:0 0 6px} header p{color:#cbd5e1;margin:0;max-width:760px}
+.nav{position:sticky;top:0;z-index:5;background:rgba(246,247,251,.94);backdrop-filter:blur(10px);padding:10px 0;margin-bottom:18px}
+.nav a{text-decoration:none;margin-right:18px;font-weight:700;color:#475467}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.stat,.panel,.job-card,.message{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.stat b{font-size:28px;display:block}.muted{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px} h2{margin-top:0;font-size:22px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fafafa}
+.controls{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:16px}
+input,select{width:100%;padding:11px;border:1px solid #d0d5dd;border-radius:10px;background:#fff}
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.job-card{display:flex;flex-direction:column}.card-top{display:flex;justify-content:space-between;align-items:center}
+.pill{font-size:12px;font-weight:800;padding:5px 9px;border-radius:999px;background:#eef2ff;color:#3730a3}.apply-first{background:#ecfdf3;color:#067647}.good-match{background:#eff8ff;color:#175cd3}.stretch-role{background:#fff6ed;color:#b54708}
+.score{font-weight:900;font-size:22px}.score small{font-size:12px;color:var(--muted)}.company{font-weight:700;color:#475467}.meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:8px 0}
+details{margin-top:7px}summary{cursor:pointer;font-weight:700}.apply{margin-top:auto;text-align:center;text-decoration:none;background:var(--accent);color:white;border-radius:10px;padding:10px;font-weight:800}
+.priority{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.rank{width:40px;height:40px;border-radius:50%;background:#111827;color:white;display:grid;place-items:center;font-weight:900}.priority h3{margin:0}.priority p{margin:4px 0;color:var(--muted)}.priority-meta{color:var(--accent);font-weight:800}
+.message button{border:0;background:#111827;color:#fff;padding:8px 12px;border-radius:9px;cursor:pointer}
+.notice{font-size:13px;color:#667085;background:#fff;border:1px solid var(--line);padding:12px 14px;border-radius:12px;margin-top:16px}
+footer{padding:30px 0;color:var(--muted);font-size:13px}
+@media(max-width:850px){.stats,.grid2,.jobs{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}header h1{font-size:27px}}
+@media(max-width:520px){.controls{grid-template-columns:1fr}.wrap{padding:14px}}
+</style></head>
+<body><div class="wrap">
+<header><h1>Valkuru Suresh Reddy</h1><p>Interactive India Job Search Dashboard · DevOps / AWS Cloud · Research snapshot: 13 Sep 2026</p>
+<div class="chips" style="margin-top:16px"><span class="chip">Junior DevOps Engineer</span><span class="chip">AWS Cloud Engineer</span><span class="chip">Cloud Support / Infrastructure Engineer</span><span class="chip">Junior SRE / Platform Engineer</span><span class="chip">DevOps / Cloud Operations Engineer</span></div></header>
+<nav class="nav"><a href="#profile">Profile</a><a href="#priority">Top 10</a><a href="#jobs">Jobs</a><a href="#resume">Resume</a><a href="#messages">Recruiter Messages</a></nav>
+<section id="profile"><div class="stats"><div class="stat"><span class="muted">Verified listings</span><b>25</b></div><div class="stat"><span class="muted">Apply First</span><b>2</b></div><div class="stat"><span class="muted">Good Match</span><b>5</b></div><div class="stat"><span class="muted">Top fit</span><b>76/100</b></div></div>
+<div class="grid2"><div class="panel"><h2>Profile Summary</h2><p>B.Tech ECE graduate (76%) with hands-on AWS, Terraform, Linux, Docker, Git/GitHub, Jenkins CI/CD, Prometheus/Grafana and AWS networking practice. Resume shows an AWS Cloud &amp; DevOps infrastructure project plus production-support apprenticeship/training.</p><h3>Strengths</h3><div class="chips"><span class="chip">AWS infrastructure fundamentals</span><span class="chip">Terraform / IaC</span><span class="chip">Jenkins + GitHub CI/CD</span><span class="chip">Linux + troubleshooting</span><span class="chip">Docker + monitoring</span></div></div>
+<div class="panel"><h2>Skill Gaps</h2><ul><li>Kubernetes/EKS</li><li>Python automation</li><li>Ansible</li><li>Production cloud experience</li><li>AWS certification</li><li>GitHub Actions / modern CI/CD depth</li></ul></div></div>
+<div class="panel" style="margin-top:18px"><h2>Top 5 Recommended Role Types</h2><ol><li><b>Junior DevOps Engineer</b></li><li><b>AWS Cloud Engineer</b></li><li><b>Cloud Support / Infrastructure Engineer</b></li><li><b>Junior SRE / Platform Engineer</b></li><li><b>DevOps / Cloud Operations Engineer</b></li></ol></div></section>
+<section id="priority" class="panel" style="margin-top:18px"><h2>Top 10 Priority Jobs</h2>
+<div class="priority">
+  <div class="rank">1</div><div><h3>CleverTap — DevOps Engineer</h3>
+  <div class="priority-meta">76/100 · Mumbai, Maharashtra</div>
+  <p>Emphasize Terraform/IaC, AWS exposure, Linux troubleshooting, Git and Jenkins; add measurable project outcomes if available.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">2</div><div><h3>Amazon Web Services — DCCD Trainee – Data Center Capacity Delivery</h3>
+  <div class="priority-meta">70/100 · Bengaluru, Karnataka</div>
+  <p>Move ECE degree and infrastructure/monitoring work higher; emphasize networking, architecture diagrams, troubleshooting and AWS exposure.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">3</div><div><h3>Predigle — DevOps Engineer</h3>
+  <div class="priority-meta">70/100 · Chennai, Tamil Nadu</div>
+  <p>Emphasize Terraform modules, Docker, Linux, networking, Git, AWS, monitoring and troubleshooting; add Bash/Python evidence.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">4</div><div><h3>Palo Alto Networks — DevOps Engineer</h3>
+  <div class="priority-meta">68/100 · Hyderabad, Telangana</div>
+  <p>Emphasize Jenkins, Terraform, AWS, Docker, Git and CI/CD; add Kubernetes/Ansible learning projects.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">5</div><div><h3>Amazon Web Services — Data Centre Linux &amp; HW Engineer</h3>
+  <div class="priority-meta">62/100 · Telangana / Hyderabad</div>
+  <p>Emphasize Linux, networking, troubleshooting and ECE; add any hardware/network lab experience that is genuinely yours.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">6</div><div><h3>Capgemini — AWS DevOps Engineer</h3>
+  <div class="priority-meta">60/100 · Bengaluru / Pune / Hyderabad / Chennai</div>
+  <p>Lead with AWS core services, Terraform, Jenkins, Docker, Linux, Prometheus/Grafana and IAM; add Route 53/Lambda/EKS if genuinely practiced.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">7</div><div><h3>Wipro — DEVOPS ENGINEER L4</h3>
+  <div class="priority-meta">55/100 · Hyderabad, Telangana</div>
+  <p>Use keywords: CI/CD, deployment automation, Git, Jenkins, Linux, AWS, Terraform, monitoring and incident troubleshooting.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">8</div><div><h3>Capgemini — DevSecOps Engineer</h3>
+  <div class="priority-meta">54/100 · Hyderabad, Telangana</div>
+  <p>Emphasize IAM, Terraform, Docker, networking, monitoring and troubleshooting; build a small security/IaC project.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">9</div><div><h3>Amazon Web Services — Network Development Engineer – Capacity Restoration</h3>
+  <div class="priority-meta">49/100 · Hyderabad, Telangana</div>
+  <p>Highlight ECE, VPC/subnets/routes/security groups, Linux and troubleshooting; add Python networking automation and routing labs.</p></div>
+</div>
+<div class="priority">
+  <div class="rank">10</div><div><h3>Wipro — DEVOPS ENGINEER</h3>
+  <div class="priority-meta">45/100 · Bengaluru, Karnataka</div>
+  <p>Only apply if the application accepts your experience level; foreground AWS/Terraform/Jenkins/Linux and clearly label project-based hands-on work.</p></div>
+</div></section>
+<section id="jobs" style="margin-top:18px"><div class="panel"><h2>Verified Job Board</h2>
+<div class="controls"><input id="q" placeholder="Search role, company, skill..."><select id="cat"><option>All categories</option><option>Apply First</option><option>Good Match</option><option>Stretch Role</option></select><select id="company"><option>All companies</option></select><select id="location"><option>All locations</option></select><select id="exp"><option>All experience</option></select></div>
+<div id="jobsGrid" class="jobs">
+    <article class="job-card" data-company="CleverTap" data-location="Mumbai, Maharashtra" data-category="Apply First" data-role="DevOps Engineer" data-exp="1–3 years">
+      <div class="card-top"><span class="pill apply-first">Apply First</span><span class="score">76<small>/100</small></span></div>
+      <h3>DevOps Engineer</h3><div class="company">CleverTap</div>
+      <div class="meta"><span>📍 Mumbai, Maharashtra</span><span>⏱ 1–3 years</span></div>
+      <p>Maintain secure, available platform operations; improve SOPs and infrastructure automation.</p>
+      <details><summary>Why I match</summary><p>Terraform/IaC, Git, Linux, DevOps troubleshooting and cloud exposure align well.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Production DevOps experience; CloudFormation/ECS or Kubernetes depth; CS-equivalent evidence may be expected.</p></details>
+      <a class="apply" href="https://careers.kula.ai/clevertap/jobs/12616" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Palo Alto Networks" data-location="Hyderabad, Telangana" data-category="Good Match" data-role="DevOps Engineer" data-exp="1–3 years">
+      <div class="card-top"><span class="pill good-match">Good Match</span><span class="score">68<small>/100</small></span></div>
+      <h3>DevOps Engineer</h3><div class="company">Palo Alto Networks</div>
+      <div class="meta"><span>📍 Hyderabad, Telangana</span><span>⏱ 1–3 years</span></div>
+      <p>DevOps/SRE engineering covering CI/CD, containerization, AWS/Azure, Terraform and automation.</p>
+      <details><summary>Why I match</summary><p>AWS, Terraform, Jenkins, Docker, Git and troubleshooting are strong overlaps; Hyderabad is a strong location fit.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>1–3 years professional DevOps/SRE experience; Azure, Ansible and production-scale practices.</p></details>
+      <a class="apply" href="https://jobs.paloaltonetworks.com/en/employment/hyderabad-telangana-india-product-engineering-jobs/47263/9376336/1269750-1254788-1269844-1269843/4" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Techracers" data-location="Indore, Madhya Pradesh" data-category="Good Match" data-role="AWS DevOps Engineer – CI/CD Pipeline" data-exp="1–3 years">
+      <div class="card-top"><span class="pill good-match">Good Match</span><span class="score">72<small>/100</small></span></div>
+      <h3>AWS DevOps Engineer – CI/CD Pipeline</h3><div class="company">Techracers</div>
+      <div class="meta"><span>📍 Indore, Madhya Pradesh</span><span>⏱ 1–3 years</span></div>
+      <p>AWS operations, Jenkins/GitLab/Azure DevOps, Terraform/CloudFormation, monitoring and Docker/Kubernetes.</p>
+      <details><summary>Why I match</summary><p>Very close stack match: AWS, Jenkins, Terraform, Prometheus/Grafana, Docker and troubleshooting.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>1–3 years hands-on experience; Kubernetes/EKS and Python depth.</p></details>
+      <a class="apply" href="https://www.hirist.tech/j/aws-devops-engineer-ci-cd-pipeline-1651577" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Predigle" data-location="Chennai, Tamil Nadu" data-category="Good Match" data-role="DevOps Engineer" data-exp="1–3 years">
+      <div class="card-top"><span class="pill good-match">Good Match</span><span class="score">70<small>/100</small></span></div>
+      <h3>DevOps Engineer</h3><div class="company">Predigle</div>
+      <div class="meta"><span>📍 Chennai, Tamil Nadu</span><span>⏱ 1–3 years</span></div>
+      <p>CI/CD, Docker/Kubernetes, Terraform/Ansible, Linux, networking, cloud deployments and monitoring.</p>
+      <details><summary>Why I match</summary><p>Strong overlap with Terraform, Docker, Linux, AWS, networking, Git and monitoring.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>1–3 years; Kubernetes, Ansible and Python/Bash depth.</p></details>
+      <a class="apply" href="https://predigle.com/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Capgemini" data-location="Bengaluru / Pune / Hyderabad / Chennai" data-category="Stretch Role" data-role="AWS DevOps Engineer" data-exp="Experienced professional">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">60<small>/100</small></span></div>
+      <h3>AWS DevOps Engineer</h3><div class="company">Capgemini</div>
+      <div class="meta"><span>📍 Bengaluru / Pune / Hyderabad / Chennai</span><span>⏱ Experienced professional</span></div>
+      <p>AWS infrastructure, Terraform, CI/CD, Docker/Kubernetes, Linux/Bash, Python and observability.</p>
+      <details><summary>Why I match</summary><p>Your AWS, Terraform, Jenkins, Docker, Linux, Prometheus/Grafana and networking skills map strongly.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Production experience and stronger Kubernetes, Lambda, EKS, Route 53, Python and security depth.</p></details>
+      <a class="apply" href="https://careers.capgemini.com/job/Bangalore-AWS-Devops-Engineer/1399296633/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Wipro" data-location="Hyderabad, Telangana" data-category="Stretch Role" data-role="DEVOPS ENGINEER L4" data-exp="Not shown in result; role level L4">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">55<small>/100</small></span></div>
+      <h3>DEVOPS ENGINEER L4</h3><div class="company">Wipro</div>
+      <div class="meta"><span>📍 Hyderabad, Telangana</span><span>⏱ Not shown in result; role level L4</span></div>
+      <p>Automate and streamline integration/deployment processes with application teams.</p>
+      <details><summary>Why I match</summary><p>Jenkins, Git/GitHub, CI/CD, Linux, AWS and troubleshooting are directly relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Likely experienced-professional level; exact current experience requirement should be checked on application page.</p></details>
+      <a class="apply" href="https://careers.wipro.com/job/Hyderabad-DEVOPS-ENGINEER-L4-IND-500032/197859-en_US/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Wipro" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="DEVOPS ENGINEER L3" data-exp="Role level L3; exact range not shown in snippet">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">56<small>/100</small></span></div>
+      <h3>DEVOPS ENGINEER L3</h3><div class="company">Wipro</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ Role level L3; exact range not shown in snippet</span></div>
+      <p>DevOps engineering focused on application delivery automation and deployment processes.</p>
+      <details><summary>Why I match</summary><p>CI/CD, Git, Jenkins, Linux and AWS/DevOps project work align.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Likely professional experience and production operations depth.</p></details>
+      <a class="apply" href="https://careers.wipro.com/job/Bengaluru-DEVOPS-ENGINEER-L3-IND-560035/197986-en_US/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Wipro" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="DEVOPS ENGINEER" data-exp="5–10 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">45<small>/100</small></span></div>
+      <h3>DEVOPS ENGINEER</h3><div class="company">Wipro</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ 5–10 years</span></div>
+      <p>AWS-focused SRE/DevOps work with Kubernetes, Jenkins, Terraform, Linux and production troubleshooting.</p>
+      <details><summary>Why I match</summary><p>Core stack overlaps heavily with your AWS, Terraform, Jenkins, Linux and troubleshooting projects.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>5–10 years; EKS/Kubernetes, OpenSearch, MSK and production SRE experience.</p></details>
+      <a class="apply" href="https://careers.wipro.com/job/DEVOPS-ENGINEER/180406-en_US/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Wipro" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="DEVOPS GCP ENGINEER" data-exp="4–8 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">42<small>/100</small></span></div>
+      <h3>DEVOPS GCP ENGINEER</h3><div class="company">Wipro</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ 4–8 years</span></div>
+      <p>GCP platform/SRE role for production-grade cloud platforms.</p>
+      <details><summary>Why I match</summary><p>Terraform, CI/CD, cloud and DevOps fundamentals transfer well.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>GCP platform experience and 4–8 years production experience.</p></details>
+      <a class="apply" href="https://careers.wipro.com/job/DEVOPS-ENGINEER/177042-en_US/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Wipro" data-location="Pan India" data-category="Stretch Role" data-role="AWS, DevOps along with Big Data Hadoop &amp; Patching" data-exp="5–8 years / listing also mentions 7–11 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">38<small>/100</small></span></div>
+      <h3>AWS, DevOps along with Big Data Hadoop &amp; Patching</h3><div class="company">Wipro</div>
+      <div class="meta"><span>📍 Pan India</span><span>⏱ 5–8 years / listing also mentions 7–11 years</span></div>
+      <p>AWS platform engineering, Terraform, scripting, GitHub Actions and infrastructure operations.</p>
+      <details><summary>Why I match</summary><p>AWS, Terraform, Bash/Linux and DevOps fundamentals overlap.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>5–8+ years, Hadoop/patching, Python/Bash at production scale, GitHub Actions.</p></details>
+      <a class="apply" href="https://careers.wipro.com/job/Bengaluru-INFRASTRUCTURE-DOMAIN-ARCHITECT-L1-IND-560035/197152_en_US/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cognizant" data-location="Kolkata, India" data-category="Stretch Role" data-role="DevOps Engineer – Salesforce/Gearset" data-exp="4–12 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">43<small>/100</small></span></div>
+      <h3>DevOps Engineer – Salesforce/Gearset</h3><div class="company">Cognizant</div>
+      <div class="meta"><span>📍 Kolkata, India</span><span>⏱ 4–12 years</span></div>
+      <p>Salesforce DevOps pipelines using Gearset and Git in a hybrid setup.</p>
+      <details><summary>Why I match</summary><p>Git, CI/CD and troubleshooting background transfers to the delivery side.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>4–12 years, Salesforce/Gearset and insurance-domain knowledge.</p></details>
+      <a class="apply" href="https://careers.cognizant.com/global-en/jobs/00068703301/devops-engineer/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cognizant" data-location="Hyderabad, Telangana" data-category="Stretch Role" data-role="Multi-cloud Specialist – Azure/GCP/AWS" data-exp="Expert-level">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">35<small>/100</small></span></div>
+      <h3>Multi-cloud Specialist – Azure/GCP/AWS</h3><div class="company">Cognizant</div>
+      <div class="meta"><span>📍 Hyderabad, Telangana</span><span>⏱ Expert-level</span></div>
+      <p>Multi-cloud SRE/architecture, Terraform/IaC, CI/CD and cloud governance.</p>
+      <details><summary>Why I match</summary><p>AWS and Terraform foundations are relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Expert Azure/GCP, Python/PowerShell, architecture, governance and advanced experience.</p></details>
+      <a class="apply" href="https://careers.cognizant.com/india-en/jobs/00068465091/multi-cloud-specialist-azure-cloud-gcp-aws/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cognizant" data-location="Chennai / Pan India" data-category="Stretch Role" data-role="MLOps Engineer" data-exp="6–15 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">31<small>/100</small></span></div>
+      <h3>MLOps Engineer</h3><div class="company">Cognizant</div>
+      <div class="meta"><span>📍 Chennai / Pan India</span><span>⏱ 6–15 years</span></div>
+      <p>Model deployment/monitoring/retraining pipelines with Kubernetes, Terraform and cloud ML services.</p>
+      <details><summary>Why I match</summary><p>Terraform, Kubernetes concepts and monitoring are transferable.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>6–15 years plus MLflow/Kubeflow/Airflow/SageMaker/Vertex AI and ML engineering.</p></details>
+      <a class="apply" href="https://careers.cognizant.com/india-en/jobs/00069857731/mlops-engineer/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cognizant" data-location="Pune, Maharashtra" data-category="Stretch Role" data-role="Manager – DevSecOps / Azure DevOps" data-exp="Manager / experienced">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">28<small>/100</small></span></div>
+      <h3>Manager – DevSecOps / Azure DevOps</h3><div class="company">Cognizant</div>
+      <div class="meta"><span>📍 Pune, Maharashtra</span><span>⏱ Manager / experienced</span></div>
+      <p>Azure DevOps, Terraform, Docker/Kubernetes, PowerShell, Ansible/Puppet and security.</p>
+      <details><summary>Why I match</summary><p>Terraform, Docker, CI/CD and troubleshooting are relevant foundations.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Manager-level experience, Azure, AKS, PowerShell, Ansible/Puppet and security ownership.</p></details>
+      <a class="apply" href="https://careers.cognizant.com/emea-en/jobs/00068048661/manager-devsecops-azure-devops-powershellyaml/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cognizant" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="Cloud Architect" data-exp="Senior/architect level">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">27<small>/100</small></span></div>
+      <h3>Cloud Architect</h3><div class="company">Cognizant</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ Senior/architect level</span></div>
+      <p>Design secure scalable AWS architectures using containers, caching, messaging and APIs.</p>
+      <details><summary>Why I match</summary><p>AWS infrastructure and networking foundations are relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Architecture-level AWS experience, enterprise governance and senior delivery history.</p></details>
+      <a class="apply" href="https://careers.cognizant.com/india-en/jobs/00069864762/cloud-architect/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Capgemini" data-location="Hyderabad, Telangana" data-category="Stretch Role" data-role="DevSecOps Engineer" data-exp="Experienced professional">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">54<small>/100</small></span></div>
+      <h3>DevSecOps Engineer</h3><div class="company">Capgemini</div>
+      <div class="meta"><span>📍 Hyderabad, Telangana</span><span>⏱ Experienced professional</span></div>
+      <p>Cloud security, Terraform/Ansible, IAM, Docker/Kubernetes, networking and monitoring.</p>
+      <details><summary>Why I match</summary><p>AWS, Terraform, IAM, Docker, networking and troubleshooting map well.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Security engineering, vulnerability management, Kubernetes and Ansible depth; experienced-professional profile.</p></details>
+      <a class="apply" href="https://careers.capgemini.com/job/Hyderabad-DevSecOps-Engineer/1435015533/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Capgemini Engineering" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="Cloud DevOps Architect" data-exp="Experienced professional">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">40<small>/100</small></span></div>
+      <h3>Cloud DevOps Architect</h3><div class="company">Capgemini Engineering</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ Experienced professional</span></div>
+      <p>Cloud DevOps architecture and cross-team application deployment integration.</p>
+      <details><summary>Why I match</summary><p>Cloud, IaC and CI/CD foundations align.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Architecture leadership and significant production experience.</p></details>
+      <a class="apply" href="https://careers.capgemini.com/job/Bangalore-Cloud-DevOps-Architect/1416199933/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Cprime" data-location="Chennai / Hyderabad" data-category="Stretch Role" data-role="Senior DevSecOps and Cloud Engineer" data-exp="Senior">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">37<small>/100</small></span></div>
+      <h3>Senior DevSecOps and Cloud Engineer</h3><div class="company">Cprime</div>
+      <div class="meta"><span>📍 Chennai / Hyderabad</span><span>⏱ Senior</span></div>
+      <p>Enterprise DevOps platforms, GitHub Actions, Jenkins, Terraform, AWS/Azure, Docker/Kubernetes and Nexus.</p>
+      <details><summary>Why I match</summary><p>Stack overlap is excellent: Terraform, Jenkins, AWS, Docker, Nexus, Linux and CI/CD.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Senior-level experience, GitHub Enterprise, Kubernetes, SonarQube, JFrog and Python/Shell automation depth.</p></details>
+      <a class="apply" href="https://jobs.lever.co/cprime/79522f4e-6103-4f1a-a90b-202aab776f8b" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Smart Working Solutions" data-location="Remote India" data-category="Stretch Role" data-role="Senior AWS Cloud Engineer" data-exp="Senior">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">43<small>/100</small></span></div>
+      <h3>Senior AWS Cloud Engineer</h3><div class="company">Smart Working Solutions</div>
+      <div class="meta"><span>📍 Remote India</span><span>⏱ Senior</span></div>
+      <p>AWS infrastructure using Terraform/IaC in a remote full-time role.</p>
+      <details><summary>Why I match</summary><p>AWS + Terraform are central to the role.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Senior-level cloud engineering and production ownership.</p></details>
+      <a class="apply" href="https://jobs.lever.co/smart-working-solutions/815dd7d1-980e-45d0-b22a-3b3e1a7c8df2" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Tech Mahindra" data-location="Pune, Maharashtra" data-category="Stretch Role" data-role="AWS DevOps / SRE Engineer" data-exp="5–10 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">41<small>/100</small></span></div>
+      <h3>AWS DevOps / SRE Engineer</h3><div class="company">Tech Mahindra</div>
+      <div class="meta"><span>📍 Pune, Maharashtra</span><span>⏱ 5–10 years</span></div>
+      <p>E-commerce DevOps/SRE covering AWS, Docker/Kubernetes, HA, scaling, monitoring and incident response.</p>
+      <details><summary>Why I match</summary><p>AWS, Docker, CI/CD and troubleshooting align.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>5–10 years, advanced Kubernetes, databases, Kafka/RabbitMQ, Redis and production SRE.</p></details>
+      <a class="apply" href="https://careers.techmahindra.com/JobDetails.aspx?IndustryType=SQAAAFQAAAA%3D-cu6HGbNv01o%3D&amp;JobCode=OQAAADQAAAAxAAAANAAAADkAAAA%3D-muWNNgDn7Hk%3D" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Tech Mahindra" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="DevOps Engineer – Azure / Kubernetes" data-exp="5–10 years">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">36<small>/100</small></span></div>
+      <h3>DevOps Engineer – Azure / Kubernetes</h3><div class="company">Tech Mahindra</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ 5–10 years</span></div>
+      <p>Azure DevOps, AKS, Terraform, Ansible Tower, GitHub Actions and CI/CD.</p>
+      <details><summary>Why I match</summary><p>Terraform, CI/CD, Git and container fundamentals are relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>5–10 years plus Azure/AKS, Ansible Tower, PowerShell/Python and certifications.</p></details>
+      <a class="apply" href="https://careers.techmahindra.com/JobDetails.aspx?IndustryType=SQAAAFQAAAA%3D-cu6HGbNv01o%3D&amp;JobCode=OQAAAFQAAAA2AAAAMgAAADUAAAA%3D-G4MTuyKHUNg%3D" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="ServiceNow" data-location="Bengaluru, Karnataka" data-category="Stretch Role" data-role="Senior DevOps Engineer" data-exp="Senior">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">34<small>/100</small></span></div>
+      <h3>Senior DevOps Engineer</h3><div class="company">ServiceNow</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ Senior</span></div>
+      <p>Infrastructure/operations engineering for scalable, secure platforms.</p>
+      <details><summary>Why I match</summary><p>DevOps, Linux, cloud and automation direction is aligned.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>Senior experience and production platform engineering depth.</p></details>
+      <a class="apply" href="https://careers.servicenow.com/jobs/744000144691979/senior-devops-engineer/" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Amazon Web Services" data-location="Hyderabad, Telangana" data-category="Stretch Role" data-role="Network Development Engineer – Capacity Restoration" data-exp="3+ years network engineering/development/operations">
+      <div class="card-top"><span class="pill stretch-role">Stretch Role</span><span class="score">49<small>/100</small></span></div>
+      <h3>Network Development Engineer – Capacity Restoration</h3><div class="company">Amazon Web Services</div>
+      <div class="meta"><span>📍 Hyderabad, Telangana</span><span>⏱ 3+ years network engineering/development/operations</span></div>
+      <p>Network automation, troubleshooting, Linux, Python and operational tooling for AWS infrastructure.</p>
+      <details><summary>Why I match</summary><p>ECE degree, AWS interest, Linux, networking, Terraform and troubleshooting are relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>3+ years networking, BGP/OSPF/IS-IS and stronger Python/network automation.</p></details>
+      <a class="apply" href="https://amazon.jobs/en/jobs/10426736/network-development-engineer-capacity-restoration-team" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Amazon Web Services" data-location="Telangana / Hyderabad" data-category="Good Match" data-role="Data Centre Linux &amp; HW Engineer" data-exp="2+ years hardware troubleshooting + 1+ year networking">
+      <div class="card-top"><span class="pill good-match">Good Match</span><span class="score">62<small>/100</small></span></div>
+      <h3>Data Centre Linux &amp; HW Engineer</h3><div class="company">Amazon Web Services</div>
+      <div class="meta"><span>📍 Telangana / Hyderabad</span><span>⏱ 2+ years hardware troubleshooting + 1+ year networking</span></div>
+      <p>AWS data-center operations, server hardware, Linux/network troubleshooting and incident handling.</p>
+      <details><summary>Why I match</summary><p>ECE degree, Linux, networking, troubleshooting and AWS infrastructure exposure are relevant.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>2+ years hardware troubleshooting and 1+ year networking experience; physical data-center work.</p></details>
+      <a class="apply" href="https://amazon.jobs/en/jobs/10498164/data-centre-linux-hw-engineer-india-data-center-operations" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article>
+    <article class="job-card" data-company="Amazon Web Services" data-location="Bengaluru, Karnataka" data-category="Apply First" data-role="DCCD Trainee – Data Center Capacity Delivery" data-exp="Trainee / entry-level">
+      <div class="card-top"><span class="pill apply-first">Apply First</span><span class="score">70<small>/100</small></span></div>
+      <h3>DCCD Trainee – Data Center Capacity Delivery</h3><div class="company">Amazon Web Services</div>
+      <div class="meta"><span>📍 Bengaluru, Karnataka</span><span>⏱ Trainee / entry-level</span></div>
+      <p>Trainee role supporting AWS data-center control systems, documentation, commissioning and automation infrastructure.</p>
+      <details><summary>Why I match</summary><p>Your ECE degree is explicitly within the listed eligible technical degrees; AWS/cloud interest is a differentiator.</p></details>
+      <details><summary>Missing skills / requirements</summary><p>BMS/EPMS, commissioning, HVAC/electrical controls and project-documentation knowledge.</p></details>
+      <a class="apply" href="https://amazon.jobs/en/jobs/10413377/dccd-trainee-data-center-capacity-delivery" target="_blank" rel="noopener">Direct Apply ↗</a>
+    </article></div><div id="empty" class="notice" style="display:none">No jobs match these filters.</div></div></section>
+<section id="resume" class="panel" style="margin-top:18px"><h2>Resume Improvements</h2>
+<ul><li><b>Headline:</b> use “Junior DevOps Engineer | AWS | Terraform | Jenkins | Docker | Linux”.</li>
+<li><b>Projects:</b> quantify what you built: number of AWS resources, Terraform modules, pipeline stages, deployments or monitoring dashboards where truthful.</li>
+<li><b>Production-support experience:</b> turn generic “supported troubleshooting” into specific incident/problem-solving bullets without overstating employment scope.</li>
+<li><b>Keywords to strengthen:</b> Kubernetes/EKS, Python/Bash automation, Ansible, GitHub Actions, AWS CloudWatch, Route 53, Lambda, security/IAM and incident response—only where genuinely practiced.</li>
+<li><b>Evidence:</b> add GitHub links to Terraform/Jenkins/Docker projects and a short README for each.</li></ul></section>
+<section id="messages" class="panel" style="margin-top:18px"><h2>Top 5 Recruiter Messages</h2>
+<div class="message"><h3>CleverTap</h3><p>Hi, I’m Suresh Reddy, a B.Tech ECE graduate focused on AWS and DevOps. I’ve built hands-on projects using AWS, Terraform, Jenkins CI/CD, Docker, Linux and Prometheus/Grafana. I noticed the DevOps Engineer opening in Mumbai and the stack closely matches my project experience. I’d appreciate it if you could consider my profile for an entry-level opportunity.</p><button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">Copy message</button></div>
+<div class="message"><h3>Amazon Web Services</h3><p>Hi, I’m Suresh Reddy, a B.Tech ECE graduate building my career in AWS/cloud infrastructure. I saw the DCCD Trainee opportunity in Bengaluru and noticed that ECE is among the listed technical degrees. My projects include AWS networking, Terraform, monitoring and troubleshooting. I’d be grateful for any guidance on the best way to be considered.</p><button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">Copy message</button></div>
+<div class="message"><h3>Predigle</h3><p>Hi, I’m Suresh Reddy, an ECE graduate targeting DevOps/cloud roles. My hands-on work covers AWS, Terraform, Docker, Jenkins CI/CD, Linux, networking and Prometheus/Grafana. Your Chennai DevOps role’s stack is a strong match. I’d appreciate a chance to share my resume and project details.</p><button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">Copy message</button></div>
+<div class="message"><h3>Palo Alto Networks</h3><p>Hi, I’m Suresh Reddy, an ECE graduate focused on AWS DevOps. I’ve worked hands-on with Terraform, Jenkins, Docker, Git, Linux and AWS infrastructure projects. I’m interested in the Hyderabad DevOps Engineer opening and would value your guidance on whether my project-based experience can be considered for the role.</p><button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">Copy message</button></div>
+<div class="message"><h3>Techracers</h3><p>Hi, I’m Suresh Reddy, a B.Tech ECE graduate focused on AWS DevOps. My hands-on project stack includes AWS, Terraform, Jenkins, Docker, Prometheus/Grafana, Git and Linux troubleshooting. The AWS DevOps Engineer role in Indore looks closely aligned with my current skills. May I share my resume for consideration?</p><button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">Copy message</button></div></section>
+<footer><b>Verification note:</b> Listings were selected from current web results on 13 Sep 2026. Direct company career pages were preferred; third-party listings are explicitly identified by their destination. “Fit score” is an analytical estimate based on the uploaded resume, not a hiring decision. Always re-check the live application page before submitting.</footer>
+</div>
+<script>
+const jobs=[{"company": "CleverTap", "role": "DevOps Engineer", "location": "Mumbai, Maharashtra", "exp": "1\u20133 years", "category": "Apply First", "score": 76, "summary": "Maintain secure, available platform operations; improve SOPs and infrastructure automation.", "match": "Terraform/IaC, Git, Linux, DevOps troubleshooting and cloud exposure align well.", "missing": "Production DevOps experience; CloudFormation/ECS or Kubernetes depth; CS-equivalent evidence may be expected.", "url": "https://careers.kula.ai/clevertap/jobs/12616"}, {"company": "Palo Alto Networks", "role": "DevOps Engineer", "location": "Hyderabad, Telangana", "exp": "1\u20133 years", "category": "Good Match", "score": 68, "summary": "DevOps/SRE engineering covering CI/CD, containerization, AWS/Azure, Terraform and automation.", "match": "AWS, Terraform, Jenkins, Docker, Git and troubleshooting are strong overlaps; Hyderabad is a strong location fit.", "missing": "1\u20133 years professional DevOps/SRE experience; Azure, Ansible and production-scale practices.", "url": "https://jobs.paloaltonetworks.com/en/employment/hyderabad-telangana-india-product-engineering-jobs/47263/9376336/1269750-1254788-1269844-1269843/4"}, {"company": "Techracers", "role": "AWS DevOps Engineer \u2013 CI/CD Pipeline", "location": "Indore, Madhya Pradesh", "exp": "1\u20133 years", "category": "Good Match", "score": 72, "summary": "AWS operations, Jenkins/GitLab/Azure DevOps, Terraform/CloudFormation, monitoring and Docker/Kubernetes.", "match": "Very close stack match: AWS, Jenkins, Terraform, Prometheus/Grafana, Docker and troubleshooting.", "missing": "1\u20133 years hands-on experience; Kubernetes/EKS and Python depth.", "url": "https://www.hirist.tech/j/aws-devops-engineer-ci-cd-pipeline-1651577"}, {"company": "Predigle", "role": "DevOps Engineer", "location": "Chennai, Tamil Nadu", "exp": "1\u20133 years", "category": "Good Match", "score": 70, "summary": "CI/CD, Docker/Kubernetes, Terraform/Ansible, Linux, networking, cloud deployments and monitoring.", "match": "Strong overlap with Terraform, Docker, Linux, AWS, networking, Git and monitoring.", "missing": "1\u20133 years; Kubernetes, Ansible and Python/Bash depth.", "url": "https://predigle.com/"}, {"company": "Capgemini", "role": "AWS DevOps Engineer", "location": "Bengaluru / Pune / Hyderabad / Chennai", "exp": "Experienced professional", "category": "Stretch Role", "score": 60, "summary": "AWS infrastructure, Terraform, CI/CD, Docker/Kubernetes, Linux/Bash, Python and observability.", "match": "Your AWS, Terraform, Jenkins, Docker, Linux, Prometheus/Grafana and networking skills map strongly.", "missing": "Production experience and stronger Kubernetes, Lambda, EKS, Route 53, Python and security depth.", "url": "https://careers.capgemini.com/job/Bangalore-AWS-Devops-Engineer/1399296633/"}, {"company": "Wipro", "role": "DEVOPS ENGINEER L4", "location": "Hyderabad, Telangana", "exp": "Not shown in result; role level L4", "category": "Stretch Role", "score": 55, "summary": "Automate and streamline integration/deployment processes with application teams.", "match": "Jenkins, Git/GitHub, CI/CD, Linux, AWS and troubleshooting are directly relevant.", "missing": "Likely experienced-professional level; exact current experience requirement should be checked on application page.", "url": "https://careers.wipro.com/job/Hyderabad-DEVOPS-ENGINEER-L4-IND-500032/197859-en_US/"}, {"company": "Wipro", "role": "DEVOPS ENGINEER L3", "location": "Bengaluru, Karnataka", "exp": "Role level L3; exact range not shown in snippet", "category": "Stretch Role", "score": 56, "summary": "DevOps engineering focused on application delivery automation and deployment processes.", "match": "CI/CD, Git, Jenkins, Linux and AWS/DevOps project work align.", "missing": "Likely professional experience and production operations depth.", "url": "https://careers.wipro.com/job/Bengaluru-DEVOPS-ENGINEER-L3-IND-560035/197986-en_US/"}, {"company": "Wipro", "role": "DEVOPS ENGINEER", "location": "Bengaluru, Karnataka", "exp": "5\u201310 years", "category": "Stretch Role", "score": 45, "summary": "AWS-focused SRE/DevOps work with Kubernetes, Jenkins, Terraform, Linux and production troubleshooting.", "match": "Core stack overlaps heavily with your AWS, Terraform, Jenkins, Linux and troubleshooting projects.", "missing": "5\u201310 years; EKS/Kubernetes, OpenSearch, MSK and production SRE experience.", "url": "https://careers.wipro.com/job/DEVOPS-ENGINEER/180406-en_US/"}, {"company": "Wipro", "role": "DEVOPS GCP ENGINEER", "location": "Bengaluru, Karnataka", "exp": "4\u20138 years", "category": "Stretch Role", "score": 42, "summary": "GCP platform/SRE role for production-grade cloud platforms.", "match": "Terraform, CI/CD, cloud and DevOps fundamentals transfer well.", "missing": "GCP platform experience and 4\u20138 years production experience.", "url": "https://careers.wipro.com/job/DEVOPS-ENGINEER/177042-en_US/"}, {"company": "Wipro", "role": "AWS, DevOps along with Big Data Hadoop & Patching", "location": "Pan India", "exp": "5\u20138 years / listing also mentions 7\u201311 years", "category": "Stretch Role", "score": 38, "summary": "AWS platform engineering, Terraform, scripting, GitHub Actions and infrastructure operations.", "match": "AWS, Terraform, Bash/Linux and DevOps fundamentals overlap.", "missing": "5\u20138+ years, Hadoop/patching, Python/Bash at production scale, GitHub Actions.", "url": "https://careers.wipro.com/job/Bengaluru-INFRASTRUCTURE-DOMAIN-ARCHITECT-L1-IND-560035/197152_en_US/"}, {"company": "Cognizant", "role": "DevOps Engineer \u2013 Salesforce/Gearset", "location": "Kolkata, India", "exp": "4\u201312 years", "category": "Stretch Role", "score": 43, "summary": "Salesforce DevOps pipelines using Gearset and Git in a hybrid setup.", "match": "Git, CI/CD and troubleshooting background transfers to the delivery side.", "missing": "4\u201312 years, Salesforce/Gearset and insurance-domain knowledge.", "url": "https://careers.cognizant.com/global-en/jobs/00068703301/devops-engineer/"}, {"company": "Cognizant", "role": "Multi-cloud Specialist \u2013 Azure/GCP/AWS", "location": "Hyderabad, Telangana", "exp": "Expert-level", "category": "Stretch Role", "score": 35, "summary": "Multi-cloud SRE/architecture, Terraform/IaC, CI/CD and cloud governance.", "match": "AWS and Terraform foundations are relevant.", "missing": "Expert Azure/GCP, Python/PowerShell, architecture, governance and advanced experience.", "url": "https://careers.cognizant.com/india-en/jobs/00068465091/multi-cloud-specialist-azure-cloud-gcp-aws/"}, {"company": "Cognizant", "role": "MLOps Engineer", "location": "Chennai / Pan India", "exp": "6\u201315 years", "category": "Stretch Role", "score": 31, "summary": "Model deployment/monitoring/retraining pipelines with Kubernetes, Terraform and cloud ML services.", "match": "Terraform, Kubernetes concepts and monitoring are transferable.", "missing": "6\u201315 years plus MLflow/Kubeflow/Airflow/SageMaker/Vertex AI and ML engineering.", "url": "https://careers.cognizant.com/india-en/jobs/00069857731/mlops-engineer/"}, {"company": "Cognizant", "role": "Manager \u2013 DevSecOps / Azure DevOps", "location": "Pune, Maharashtra", "exp": "Manager / experienced", "category": "Stretch Role", "score": 28, "summary": "Azure DevOps, Terraform, Docker/Kubernetes, PowerShell, Ansible/Puppet and security.", "match": "Terraform, Docker, CI/CD and troubleshooting are relevant foundations.", "missing": "Manager-level experience, Azure, AKS, PowerShell, Ansible/Puppet and security ownership.", "url": "https://careers.cognizant.com/emea-en/jobs/00068048661/manager-devsecops-azure-devops-powershellyaml/"}, {"company": "Cognizant", "role": "Cloud Architect", "location": "Bengaluru, Karnataka", "exp": "Senior/architect level", "category": "Stretch Role", "score": 27, "summary": "Design secure scalable AWS architectures using containers, caching, messaging and APIs.", "match": "AWS infrastructure and networking foundations are relevant.", "missing": "Architecture-level AWS experience, enterprise governance and senior delivery history.", "url": "https://careers.cognizant.com/india-en/jobs/00069864762/cloud-architect/"}, {"company": "Capgemini", "role": "DevSecOps Engineer", "location": "Hyderabad, Telangana", "exp": "Experienced professional", "category": "Stretch Role", "score": 54, "summary": "Cloud security, Terraform/Ansible, IAM, Docker/Kubernetes, networking and monitoring.", "match": "AWS, Terraform, IAM, Docker, networking and troubleshooting map well.", "missing": "Security engineering, vulnerability management, Kubernetes and Ansible depth; experienced-professional profile.", "url": "https://careers.capgemini.com/job/Hyderabad-DevSecOps-Engineer/1435015533/"}, {"company": "Capgemini Engineering", "role": "Cloud DevOps Architect", "location": "Bengaluru, Karnataka", "exp": "Experienced professional", "category": "Stretch Role", "score": 40, "summary": "Cloud DevOps architecture and cross-team application deployment integration.", "match": "Cloud, IaC and CI/CD foundations align.", "missing": "Architecture leadership and significant production experience.", "url": "https://careers.capgemini.com/job/Bangalore-Cloud-DevOps-Architect/1416199933/"}, {"company": "Cprime", "role": "Senior DevSecOps and Cloud Engineer", "location": "Chennai / Hyderabad", "exp": "Senior", "category": "Stretch Role", "score": 37, "summary": "Enterprise DevOps platforms, GitHub Actions, Jenkins, Terraform, AWS/Azure, Docker/Kubernetes and Nexus.", "match": "Stack overlap is excellent: Terraform, Jenkins, AWS, Docker, Nexus, Linux and CI/CD.", "missing": "Senior-level experience, GitHub Enterprise, Kubernetes, SonarQube, JFrog and Python/Shell automation depth.", "url": "https://jobs.lever.co/cprime/79522f4e-6103-4f1a-a90b-202aab776f8b"}, {"company": "Smart Working Solutions", "role": "Senior AWS Cloud Engineer", "location": "Remote India", "exp": "Senior", "category": "Stretch Role", "score": 43, "summary": "AWS infrastructure using Terraform/IaC in a remote full-time role.", "match": "AWS + Terraform are central to the role.", "missing": "Senior-level cloud engineering and production ownership.", "url": "https://jobs.lever.co/smart-working-solutions/815dd7d1-980e-45d0-b22a-3b3e1a7c8df2"}, {"company": "Tech Mahindra", "role": "AWS DevOps / SRE Engineer", "location": "Pune, Maharashtra", "exp": "5\u201310 years", "category": "Stretch Role", "score": 41, "summary": "E-commerce DevOps/SRE covering AWS, Docker/Kubernetes, HA, scaling, monitoring and incident response.", "match": "AWS, Docker, CI/CD and troubleshooting align.", "missing": "5\u201310 years, advanced Kubernetes, databases, Kafka/RabbitMQ, Redis and production SRE.", "url": "https://careers.techmahindra.com/JobDetails.aspx?IndustryType=SQAAAFQAAAA%3D-cu6HGbNv01o%3D&JobCode=OQAAADQAAAAxAAAANAAAADkAAAA%3D-muWNNgDn7Hk%3D"}, {"company": "Tech Mahindra", "role": "DevOps Engineer \u2013 Azure / Kubernetes", "location": "Bengaluru, Karnataka", "exp": "5\u201310 years", "category": "Stretch Role", "score": 36, "summary": "Azure DevOps, AKS, Terraform, Ansible Tower, GitHub Actions and CI/CD.", "match": "Terraform, CI/CD, Git and container fundamentals are relevant.", "missing": "5\u201310 years plus Azure/AKS, Ansible Tower, PowerShell/Python and certifications.", "url": "https://careers.techmahindra.com/JobDetails.aspx?IndustryType=SQAAAFQAAAA%3D-cu6HGbNv01o%3D&JobCode=OQAAAFQAAAA2AAAAMgAAADUAAAA%3D-G4MTuyKHUNg%3D"}, {"company": "ServiceNow", "role": "Senior DevOps Engineer", "location": "Bengaluru, Karnataka", "exp": "Senior", "category": "Stretch Role", "score": 34, "summary": "Infrastructure/operations engineering for scalable, secure platforms.", "match": "DevOps, Linux, cloud and automation direction is aligned.", "missing": "Senior experience and production platform engineering depth.", "url": "https://careers.servicenow.com/jobs/744000144691979/senior-devops-engineer/"}, {"company": "Amazon Web Services", "role": "Network Development Engineer \u2013 Capacity Restoration", "location": "Hyderabad, Telangana", "exp": "3+ years network engineering/development/operations", "category": "Stretch Role", "score": 49, "summary": "Network automation, troubleshooting, Linux, Python and operational tooling for AWS infrastructure.", "match": "ECE degree, AWS interest, Linux, networking, Terraform and troubleshooting are relevant.", "missing": "3+ years networking, BGP/OSPF/IS-IS and stronger Python/network automation.", "url": "https://amazon.jobs/en/jobs/10426736/network-development-engineer-capacity-restoration-team"}, {"company": "Amazon Web Services", "role": "Data Centre Linux & HW Engineer", "location": "Telangana / Hyderabad", "exp": "2+ years hardware troubleshooting + 1+ year networking", "category": "Good Match", "score": 62, "summary": "AWS data-center operations, server hardware, Linux/network troubleshooting and incident handling.", "match": "ECE degree, Linux, networking, troubleshooting and AWS infrastructure exposure are relevant.", "missing": "2+ years hardware troubleshooting and 1+ year networking experience; physical data-center work.", "url": "https://amazon.jobs/en/jobs/10498164/data-centre-linux-hw-engineer-india-data-center-operations"}, {"company": "Amazon Web Services", "role": "DCCD Trainee \u2013 Data Center Capacity Delivery", "location": "Bengaluru, Karnataka", "exp": "Trainee / entry-level", "category": "Apply First", "score": 70, "summary": "Trainee role supporting AWS data-center control systems, documentation, commissioning and automation infrastructure.", "match": "Your ECE degree is explicitly within the listed eligible technical degrees; AWS/cloud interest is a differentiator.", "missing": "BMS/EPMS, commissioning, HVAC/electrical controls and project-documentation knowledge.", "url": "https://amazon.jobs/en/jobs/10413377/dccd-trainee-data-center-capacity-delivery"}];
+const grid=document.getElementById('jobsGrid'), q=document.getElementById('q'), cat=document.getElementById('cat'), company=document.getElementById('company'), location=document.getElementById('location'), exp=document.getElementById('exp'), empty=document.getElementById('empty');
+const uniq=a=>[...new Set(a)].sort();
+uniq(jobs.map(x=>x.company)).forEach(x=>company.insertAdjacentHTML('beforeend',`<option>${x}</option>`));
+uniq(jobs.map(x=>x.location)).forEach(x=>location.insertAdjacentHTML('beforeend',`<option>${x}</option>`));
+uniq(jobs.map(x=>x.exp)).forEach(x=>exp.insertAdjacentHTML('beforeend',`<option>${x}</option>`));
+function render(){
+ let s=q.value.toLowerCase(), c=cat.value, co=company.value, l=location.value, e=exp.value;
+ let cards=[...document.querySelectorAll('.job-card')], n=0;
+ cards.forEach((el,i)=>{let j=jobs[i];let ok=(!s||JSON.stringify(j).toLowerCase().includes(s))&&(c==='All categories'||j.category===c)&&(co==='All companies'||j.company===co)&&(l==='All locations'||j.location===l)&&(e==='All experience'||j.exp===e);el.style.display=ok?'flex':'none';if(ok)n++;});
+ empty.style.display=n?'none':'block';
+}
+[q,cat,company,location,exp].forEach(x=>x.addEventListener('input',render));render();
+</script></body></html>
